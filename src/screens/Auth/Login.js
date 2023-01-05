@@ -9,6 +9,7 @@ import TitleHeader from '../../components/Header/TitleHeader';
 import serverConfig from '../../config/serverConfig'
 import { observer } from 'mobx-react'
 import MainStore from '../../store/MainStore'
+import Feather from 'react-native-vector-icons/Feather'
 
 
 const Login = ({ navigation }) => {

@@ -7,6 +7,8 @@ import serverConfig from './src/config/serverConfig';
 import MainStore from './src/store/MainStore';
 import { observer } from 'mobx-react';
 
+
+
 const App = () => {
   const [appReady, setAppReady] = useState(false)
   const axiosConfig = {
@@ -15,10 +17,13 @@ const App = () => {
     }
   }
   useEffect(() => {
-    axios.get(`${serverConfig.ip}/getMyInfo`, axiosConfig).then(res => {
-      MainStore.updateAuth(res.data.name, res.data.surName, res.data.email, res.data.profilPicture, res.data)
-      setAppReady(true)
-    })
+    
+      axios.get(`${serverConfig.ip}/getMyInfo`, axiosConfig).then(res => {
+        MainStore.updateAuth(res.data.name, res.data.surName, res.data.email, res.data.profilPicture, res.data)
+        setAppReady(true)
+      })
+  
+   
   }, [])
 
   if (!appReady) {
