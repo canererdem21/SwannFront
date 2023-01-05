@@ -20,9 +20,6 @@ const Home = ({ navigation }) => {
     const [trendingData, setTrendingData] = useState(null)
     const [appReady, setAppReady] = useState(false)
 
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
 
     useEffect(() => {
         axios.get(`${serverConfig.ip}/getHomeData`).then(res => {
@@ -54,7 +51,7 @@ const Home = ({ navigation }) => {
                                     <Text style={{ fontSize: 15, fontWeight: '500', color: 'gray' }}>Good Morning,</Text>
                                 </View>
                                 <View style={{ marginTop: 5 }}>
-                                    <Text style={{ color: '#BD88FF', fontSize: 22, fontWeight: '700' }}>{capitalizeFirstLetter(MainStore.name)}</Text>
+                                    <Text style={{ color: '#BD88FF', fontSize: 22, fontWeight: '700' }}>{MainStore.name}</Text>
                                 </View>
                             </View>
                         </View>
