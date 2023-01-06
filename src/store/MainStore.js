@@ -35,7 +35,7 @@ class MainStore {
 
     @action logOut()
     {
-        this.token = ''
+        this.token = false
         AsyncStorage.clear()
         this.auth = false
     }
@@ -115,7 +115,6 @@ class MainStore {
         makeObservable(this)
         autorun(async () => {
             AsyncStorage.getItem('token').then(res => this.token = res)
-
         })
     }
 }

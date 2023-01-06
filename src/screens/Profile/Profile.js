@@ -7,9 +7,7 @@ import MainStore from '../../store/MainStore'
 import { observer } from 'mobx-react'
 
 const Profile = ({ navigation }) => {
-    function capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
-    }
+  
 
     return (
         <View style={{ backgroundColor: '#27004B', flex: 1 }}>
@@ -19,7 +17,7 @@ const Profile = ({ navigation }) => {
                     <Image source={{ uri: MainStore.profilPicture }} style={{ width: 160, height: 160, borderRadius: 30 }} />
                 </View>
                 <View style={{ marginTop: 15 }}>
-                    <Text style={{ color: '#BD88FF', fontSize: 30, fontWeight: '800' }}>{capitalizeFirstLetter(MainStore.name)}</Text>
+                    <Text style={{ color: '#BD88FF', fontSize: 30, fontWeight: '800' }}>{MainStore.name}</Text>
                 </View>
             </View>
 

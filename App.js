@@ -17,11 +17,13 @@ const App = () => {
     }
   }
   useEffect(() => {
-    
+    MainStore.token ?
       axios.get(`${serverConfig.ip}/getMyInfo`, axiosConfig).then(res => {
         MainStore.updateAuth(res.data.name, res.data.surName, res.data.email, res.data.profilPicture, res.data)
         setAppReady(true)
       })
+      :
+      setAppReady(true)
   
    
   }, [])
